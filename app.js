@@ -4,16 +4,22 @@ let overusedWords = ['really', 'very', 'basically'];
 
 let unnecessaryWords = ['extremely', 'literally', 'actually' ];
 
-let storyWords = story.split(/[ ,.!-]+/);
-// let storyWords = story.split(' ');
-console.log(storyWords.length);
+console.log('Initial paragraph:');
+console.log(story);
+console.log(' ');
 
+// gather some information about the individual words and 
+// sentences in the string. Split the string into individual words 
+// and save them in a new array called storyWords.
+let storyWords = story.split(' ');
+
+// Iterate over array to filter out these words. 
+// Save the remaining words in an array called betterWords.
 let betterWords = storyWords.filter((word) => {
   return unnecessaryWords.indexOf(word) < 0;
 });
 
-console.log(betterWords.length);
-
+// How many times they have used these overused words.
 const numOfOverusedWords = betterWords.reduce((accumulator, currentWord) => {
   if (overusedWords.indexOf(currentWord) > -1) {
     accumulator++;
@@ -21,4 +27,32 @@ const numOfOverusedWords = betterWords.reduce((accumulator, currentWord) => {
   return accumulator;
 }, 0);
 
-console.log(numOfOverusedWords);
+// Count how many sentences are in the paragraph.
+const numOfSentences = betterWords.reduce((sentence, currentWord) => {
+  if (['.', '!'].indexOf(currentWord[currentWord.length-1]) > -1) {
+    sentence++;
+  }
+  return sentence;
+}, 0);
+
+
+// Log these items to the console:
+// - The word count
+// - The sentence count
+// - The number of times each overused word appears
+const result = [
+  `word count              = ${betterWords.length}`, 
+  `sentence count          = ${numOfSentences}`, 
+  `overused word apperance = ${numOfOverusedWords}`
+]
+
+const printResult = (res) => {
+  console.log(res);
+}
+
+result.forEach(printResult);
+
+// Log the betterWords array to the console as a single string.
+console.log(' ');
+console.log('Final paragraph:');
+console.log(betterWords.join(' '));
