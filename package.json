@@ -1,0 +1,24 @@
+{
+  "name": "minilinter",
+  "version": "1.0.0",
+  "description": "A mini linter program written in JavaScript using iterators implementation.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ridhanf/mini-linter-js.git"
+  },
+  "keywords": [
+    "JavaScript",
+    "Iterators",
+    "Linter"
+  ],
+  "author": "ridhanf",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ridhanf/mini-linter-js/issues"
+  },
+  "homepage": "https://github.com/ridhanf/mini-linter-js#readme"
+}
