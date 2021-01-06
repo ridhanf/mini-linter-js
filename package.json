@@ -1,5 +1,5 @@
 {
-  "name": "miniLinter",
+  "name": "mini-linter",
   "version": "1.0.0",
   "description": "A mini linter program written in JavaScript using iterators implementation.",
   "main": "app.js",
